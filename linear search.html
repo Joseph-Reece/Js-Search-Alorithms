@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search algorithms</title>
+</head>
+
+<body>
+    <script>
+        /* Linear search  */
+
+        /* Uses Recurssion */
+
+        function search(arr, num) {
+            let nums = [];
+
+            // helper function which is recurssive
+            function oddsAre(arr2, num) {
+                if (arr2.length === 0) {
+                    return nums.push("not found");
+                }
+                if (arr2[0] === num) {
+
+                    nums.push(arr2[0])
+
+                    // return num;
+                    // break;
+
+                    
+                }
+                oddsAre(arr2.slice(1), num)
+            }
+
+            oddsAre(arr, num)
+
+            return nums;
+
+        }
+
+        /* without recurssion */
+
+        function searchNum(arr, num){
+            for (let i = 0; i < arr.length; i++) {
+                if (num === arr[i]) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        console.log(searchNum([1, 2, 4, 3, 5, 6, 7], 6));
+    </script>
+</body>
+
+</html>
